@@ -1,0 +1,7 @@
+genericsorts\MergeSort.class
+genericsorts\QuickSort.class
+genericsorts\InsertionSort.class
+genericsorts\RadixSort.class
+genericsorts\IGenericSort.class
+genericsorts\Driver.class
+genericsorts\CycleSort.class

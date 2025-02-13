@@ -11,11 +11,9 @@ public class SortsTest {
         Integer[] array = {5, 3, 1, 4, 2};
         MergeSort<Integer> mergeSort = new MergeSort<>();
         Integer[] sortedArray = mergeSort.sort(array);
-        assertTrue(sortedArray[0] == 1);
-        assertTrue(sortedArray[1] == 2);
-        assertTrue(sortedArray[2] == 3);
-        assertTrue(sortedArray[3] == 4);
-        assertTrue(sortedArray[4] == 5);
+        for (int i = 0; i < array.length; i++) {
+            assertTrue(sortedArray[i] == (i+1));
+        }
     }
 
     @Test
@@ -23,10 +21,18 @@ public class SortsTest {
         Integer[] array = {5, 4, 1, 2, 3};
         InsertionSort<Integer> insertionSort = new InsertionSort<>();
         Integer[] sortedArray = insertionSort.sort(array);
-        assertTrue(sortedArray[0] == 1);
-        assertTrue(sortedArray[1] == 2);
-        assertTrue(sortedArray[2] == 3);
-        assertTrue(sortedArray[3] == 4);
-        assertTrue(sortedArray[4] == 5);
+        for (int i = 0; i < array.length; i++) {
+            assertTrue(sortedArray[i] == (i+1));
+        }
+    }
+
+    @Test
+    public void shouldReturnRadixSortedArray(){
+        Integer[] array = {4, 5, 1, 3, 2};
+        RadixSort<Integer> radixSort = new RadixSort<>(Integer::intValue);
+        Integer[] sortedArray = radixSort.sort(array);
+        for (int i = 0; i < array.length; i++) {
+            assertTrue(sortedArray[i] == (i+1));
+        }
     }
 }

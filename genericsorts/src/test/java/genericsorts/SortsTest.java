@@ -17,4 +17,16 @@ public class SortsTest {
         assertTrue(sortedArray[3] == 4);
         assertTrue(sortedArray[4] == 5);
     }
+
+    @Test
+    public void shouldReturnInsertionSortedArray() {
+        Integer[] array = {5, 4, 1, 2, 3};
+        InsertionSort<Integer> insertionSort = new InsertionSort<>();
+        Integer[] sortedArray = insertionSort.sort(array);
+        assertTrue(sortedArray[0] == 1);
+        assertTrue(sortedArray[1] == 2);
+        assertTrue(sortedArray[2] == 3);
+        assertTrue(sortedArray[3] == 4);
+        assertTrue(sortedArray[4] == 5);
+    }
 }

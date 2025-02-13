@@ -21,26 +21,24 @@ public class Driver {
          */
         ArrayList<Integer[]> sortedArrays = new ArrayList<>();
         MergeSort<Integer> mergeSort = new MergeSort<>();
-        // InsertionSort<Integer> insertionSort = new InsertionSort<>();
-        QuickSort<Integer> quickSort = new QuickSort<>();
-        RadixSort<Integer> radixSort = new RadixSort<>();
-        //CycleSort<Integer> cycleSort = new CycleSort<>();
+        InsertionSort<Integer> insertionSort = new InsertionSort<>();
+        // QuickSort<Integer> quickSort = new QuickSort<>();
+        // RadixSort<Integer> radixSort = new RadixSort<>();
+        // CycleSort<Integer> cycleSort = new CycleSort<>();
         sortedArrays.add(mergeSort.sort(randomArray));
-        // sortedArrays.add(insertionSort.sort(randomArray));
-        sortedArrays.add(quickSort.sort(randomArray));
-        sortedArrays.add(radixSort.sort(randomArray));
+        sortedArrays.add(insertionSort.sort(randomArray));
+        // sortedArrays.add(quickSort.sort(randomArray));
+        // sortedArrays.add(radixSort.sort(randomArray));
         // sortedArrays.add(cycleSort.sort(randomArray));
-        System.out.println("Las arrays ordenadas por cada una de los algorítmos son:");
+        System.out.println("El tiempo transcurrido por cada algorítmo es:");
         String[] sortNames = {"Quicksort", "Mergesort", "Insertionsort", "Radixsort", "Cyclesort"};
-        for (int i = 0; i < sortNames.length; i++){
-            System.out.println(sortNames[i] + ":");
-            for (int j = 0; j < sortedArrays.get(i).length; j++){
-                System.out.print(sortedArrays.get(i)[j] + " ");
-            }
-            System.out.println("-".repeat(50));
+        for (int i = 0; i < sortNames.length; i++) {
+            System.out.println(sortNames[i] + ": " + sortedArrays.get(i)[0]);
         }
         System.out.println("Tamaño del array: " + arraySize);
     }
+
+    
 }
 
 

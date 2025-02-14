@@ -7,7 +7,8 @@ public class RadixSort<T extends Comparable<T>> implements IGenericSort<T> {
     /*
      * NOTA: La variación de RadixSort utilizada es LSD (Least Significant Digit).
      * Este sort únicamente funciona con enteros, por lo que se tiene que convertir de T a Integer.
-     * Complejidad temporal: T(n) = 
+     * Complejidad Big O(n log(max))"
+     * Complejidad temporal: T(n) = O(n) + (log(max) +1) * O(n) + O(n)
      * Notación 
      */
 

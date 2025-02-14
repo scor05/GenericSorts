@@ -101,7 +101,6 @@ public class SortsTest {
     }
 
     @Test 
-
     public void ShouldReturnCycleSortedArray(){
         Integer[] arrayUnordered = {5, 3, 1, 4, 2};
         Integer[] arrayOrdered = {1, 2, 3, 4, 5};
@@ -126,6 +125,37 @@ public class SortsTest {
 
         Integer[] sortedEmptyArray = cyclesort.sort(arrayEmpty);
         Integer[] sortedSingleArray = cyclesort.sort(arraySingle);
+        assertTrue(sortedEmptyArray.length == 0);
+        assertTrue(sortedSingleArray.length == 1);
+        assertTrue(sortedSingleArray[0] == 1);  
+
+    }
+
+    @Test
+    public void shouldReturnQuickSortedArray(){
+        Integer[] arrayUnordered = {5, 3, 1, 4, 2};
+        Integer[] arrayOrdered = {1, 2, 3, 4, 5};
+        Integer[] arrayRepeated = {1, 1, 2, 2, 3};
+        Integer[] arrayEmpty = {};
+        Integer[] arraySingle = {1};
+        
+        QuickSort<Integer> quickSort = new QuickSort<>();
+        Integer[] sortedUnorderedArray = quicksort.sort(arrayUnordered);
+        Integer[] sortedOrderedArray = quicksort.sort(arrayOrdered);
+        for (int i = 0; i < arrayUnordered.length; i++) {
+            assertTrue(sortedUnorderedArray[i] == (i+1));
+            assertTrue(sortedOrderedArray[i] == arrayOrdered[i]);
+        }
+
+        Integer[] sortedRepeatedArray = quicksort.sort(arrayRepeated);
+        assertTrue(sortedRepeatedArray[0] == 1);
+        assertTrue(sortedRepeatedArray[1] == 1);
+        assertTrue(sortedRepeatedArray[2] == 2);
+        assertTrue(sortedRepeatedArray[3] == 2);
+        assertTrue(sortedRepeatedArray[4] == 3);
+
+        Integer[] sortedEmptyArray = quicksort.sort(arrayEmpty);
+        Integer[] sortedSingleArray = quicksort.sort(arraySingle);
         assertTrue(sortedEmptyArray.length == 0);
         assertTrue(sortedSingleArray.length == 1);
         assertTrue(sortedSingleArray[0] == 1);  

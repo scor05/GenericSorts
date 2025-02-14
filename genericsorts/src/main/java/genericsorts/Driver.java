@@ -26,6 +26,8 @@ public class Driver {
         sorts.add(new InsertionSort<Integer>());
         sorts.add(new MergeSort<Integer>());
         sorts.add(new RadixSort<Integer>(Integer::intValue));
+        sorts.add(new QuickSort<Integer>());
+        sorts.add(new CycleSort<Integer>());
         
         for (IGenericSort<Integer> sort : sorts) {
             System.out.println("\n" + "-".repeat(50));

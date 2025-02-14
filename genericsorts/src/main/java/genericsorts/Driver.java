@@ -66,6 +66,6 @@ public class Driver {
         long startTime = System.nanoTime();
         runnable.run();
         long endTime = System.nanoTime();
-        return (endTime - startTime) / Math.pow(10,3); // retorna en milisegundos el tiempo
+        return (endTime - startTime) / Math.pow(10,6); // retorna en milisegundos el tiempo
     }
 }

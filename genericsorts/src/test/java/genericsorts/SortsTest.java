@@ -139,7 +139,7 @@ public class SortsTest {
         Integer[] arrayEmpty = {};
         Integer[] arraySingle = {1};
         
-        QuickSort<Integer> quickSort = new QuickSort<>();
+        QuickSort<Integer> quicksort = new QuickSort<>();
         Integer[] sortedUnorderedArray = quicksort.sort(arrayUnordered);
         Integer[] sortedOrderedArray = quicksort.sort(arrayOrdered);
         for (int i = 0; i < arrayUnordered.length; i++) {

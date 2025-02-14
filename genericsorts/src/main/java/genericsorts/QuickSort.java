@@ -1,12 +1,17 @@
 package genericsorts;
 
 public class QuickSort<T extends Comparable<T>> implements IGenericSort<T> {
+    /*
+     * En el peor de los casos, Big O, el algoritmo tendrá una complejidad de O(n^2) debido a su recursión,
+     * siendo así que el peor de los casos es cuando el pivote elegido es el mínimo o máximo cada vez 
+     * que el algoritmo se parte, provocado porque la lista está ordenada.
+     */
     @Override
     public T[] sort(T[] array) {
         if (array == null || array.length == 0) {
             return array;
         }
-        //
+        //Caso en el que el array es 0, O(1)
         quickSort(array, 0, array.length - 1);
         return array;
     }

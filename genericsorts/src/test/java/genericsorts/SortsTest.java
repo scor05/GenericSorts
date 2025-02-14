@@ -99,4 +99,36 @@ public class SortsTest {
         assertTrue(sortedSingleArray.length == 1);
         assertTrue(sortedSingleArray[0] == 1);  
     }
+
+    @Test 
+
+    public void ShouldReturnCycleSortedArray(){
+        Integer[] arrayUnordered = {5, 3, 1, 4, 2};
+        Integer[] arrayOrdered = {1, 2, 3, 4, 5};
+        Integer[] arrayRepeated = {1, 1, 2, 2, 3};
+        Integer[] arrayEmpty = {};
+        Integer[] arraySingle = {1};
+        
+        CycleSort<Integer> cyclesort = new CycleSort<>();
+        Integer[] sortedUnorderedArray = cyclesort.sort(arrayUnordered);
+        Integer[] sortedOrderedArray = cyclesort.sort(arrayOrdered);
+        for (int i = 0; i < arrayUnordered.length; i++) {
+            assertTrue(sortedUnorderedArray[i] == (i+1));
+            assertTrue(sortedOrderedArray[i] == arrayOrdered[i]);
+        }
+
+        Integer[] sortedRepeatedArray = cyclesort.sort(arrayRepeated);
+        assertTrue(sortedRepeatedArray[0] == 1);
+        assertTrue(sortedRepeatedArray[1] == 1);
+        assertTrue(sortedRepeatedArray[2] == 2);
+        assertTrue(sortedRepeatedArray[3] == 2);
+        assertTrue(sortedRepeatedArray[4] == 3);
+
+        Integer[] sortedEmptyArray = cyclesort.sort(arrayEmpty);
+        Integer[] sortedSingleArray = cyclesort.sort(arraySingle);
+        assertTrue(sortedEmptyArray.length == 0);
+        assertTrue(sortedSingleArray.length == 1);
+        assertTrue(sortedSingleArray[0] == 1);  
+
+    }
 }
